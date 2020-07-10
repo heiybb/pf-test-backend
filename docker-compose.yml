@@ -1,0 +1,26 @@
+version: '3'
+services:
+  postgres_container:
+    container_name: postgres-db
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: K5ec4f1Cc31d6817
+      POSTGRES_DB: test
+    volumes:
+      - postgres-data:/var/lib/test/postgres/data/
+    ports:
+      - 5432:5432
+  mongodb_container:
+    container_name: mongo-db
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: test
+      MONGO_INITDB_ROOT_PASSWORD: K5ec4f1Cc31d6817
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb-data:/var/lib/test/mongodb/data/
+volumes:
+  postgres-data:
+  mongodb-data: 
